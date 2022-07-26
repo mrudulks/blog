@@ -1,0 +1,80 @@
+body {
+    background-color: grey;
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+ul {
+    margin-bottom: 0 !important;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav_items a {
+    padding: 10px 15px;
+}
+
+/* Hero section  */
+
+.hero_section {
+    background-color: gray;
+    background-image: url(./images/hero-bg.jpg);
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+    flex-direction: column;
+    color: white;
+}
+
+.hero_section .contents {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    color: grey;
+}
+
+/* Blog Card  */
+.blog-area{
+    padding-top: 5rem;
+}
+.single-posts .icons{
+    display:flex ;
+    margin: 1.5rem 0 1rem 0;
+}
+.single-posts .icons .keywords{
+    background-color: #ababab;
+    padding: 0rem 1rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 1px;
+    letter-spacing: 2px;
+    border: 1px solid #ffad4d;
+    background: #ffad4d;
+    color: #fff !important;
+}
+.single-posts .title{
+    font-size: 1.8rem;
+    color: #444;
+}
