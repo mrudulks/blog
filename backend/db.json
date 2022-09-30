@@ -1,0 +1,21 @@
+{
+  "list": [
+    {
+      "id": 12,
+      "content": "First List",
+      "cards": [
+        {
+          "id": 1,
+          "content": "Hello card1",
+          "done": false
+        }
+      ],
+      "done": false
+    },
+    {
+      "id": 1,
+      "content": "ddd",
+      "done": false
+    }
+  ]
+}

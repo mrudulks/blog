@@ -9,22 +9,46 @@
             placeholder="Add another list"
             v-model="newList"
           />
-          <button class="btn btn-info w-25">Add List</button>
+          <button class="btn btn-info w-25" @click="createList">Add List</button>
         </div>
       </div>
-  <ListCard></ListCard>
+      <ListCard v-for="item in list" :list="item" :key="item.id"></ListCard>
     </div>
   </section>
 </template>
 
 <script>
+import api from "../utils/api";
 import ListCard from "../components/ListCard.vue";
 export default {
     data() {
       return{
-        newList: ""
+        newList: "",
+        list:[]
       }
     },
-    components: { ListCard }
+    components: { ListCard },
+    methods:{
+      async getList(){
+        const res = await api.getList();
+        const data = await res.json();
+        this.list = data;
+      },
+      async createList(){
+        const id = Math.floor( Math.random() * 10);
+        if(this.newList){
+          const postData = {
+            "id":id,
+            "content":this.newList,
+            "done":false
+          }
+          const res = await api.createList(postData);
+          await this.getList();
+        }
+      }
+    },
+    async mounted(){
+      await this.getList();
+    }
 }
 </script>

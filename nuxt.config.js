@@ -9,8 +9,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href:"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css", rel:"stylesheet"}    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,8 +39,13 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy:true,
+  },
 
+  proxy:{
+    '/api/':{ target: 'http://localhost:3004', pathRewrite: {'^/api/': ''} },
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
